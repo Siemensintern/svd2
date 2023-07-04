@@ -1,0 +1,38 @@
+.cards
+{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+}
+.card1
+{
+    display: flex;
+    flex-direction: row;
+    
+    margin-bottom: 30px;
+}
+.card
+{
+    width: 33%;
+    height: 100%;
+}
+div.cards
+{
+    text-align: center;
+    padding-top: 20px;
+    
+    background-color: rgb(120, 101, 231);
+}
+
+p
+{
+    font-family: auto;
+font-size: small;
+ font-weight: normal;
+ padding: 15px;
+}
+h1.head
+{
+    color: white;
+}

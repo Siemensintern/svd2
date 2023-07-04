@@ -1,0 +1,63 @@
+extends base.pug
+
+block style
+  style
+    include ../static/style.css
+    include ../static/details.css
+
+block scripts
+  script(src='../static/details.js')
+
+block content
+  div.container
+    h1 Item Details
+    // Display the item details here
+    div.mini
+       table 
+          tr
+             td 
+               h4 Type
+             td 
+               p #{item.Type}
+          tr
+             td
+               h4 Item Description
+             td 
+               p #{item.Item_Description}
+          tr
+             td
+               h4 Unit
+             td
+               p #{item.unit}
+   
+          tr
+             td
+               h4 OEM
+             td
+               p #{item.OEM}
+            
+  
+          tr
+             td
+               h4 RDSO Specification no.
+             td
+               p #{item.RDSO_Specification_no}
+
+          tr
+             td
+               h4 RDSO Approval Status
+             td
+               p #{item.RDSO_Approval_Status}
+          tr
+             td
+               h4 Drawing/Datasheet
+             td
+               p #{item.Drawing_Datasheet}
+          tr
+             td
+               h4 Status of Drawing/DataSheet
+             td
+               p #{item.Status_of_Drawing_DataSheet}
+        
+  
+    //- Add more properties as needed

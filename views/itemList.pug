@@ -1,0 +1,50 @@
+extends base.pug
+
+block style
+  style
+    include ../static/style.css
+    include ../static/contact.css
+
+block scripts
+  script(src='../static/index.js')
+
+block content
+  div.container
+    h1 Category: #{selectedCategory}
+
+  .search
+    form#searchForm
+      input#searchInput(type='text' placeholder='Search Categories...')
+      input(type='submit' value='Search')
+
+  #bookshelf.bookshelf
+  each item in items
+    div.book
+      h3 Type: #{item.Type}
+      p Item Description: #{item.Item_Description}
+
+      button.pdf-button(type='button' onclick=`showAdditionalData('${item._id}')`) More Information
+
+      //- Add more properties as needed
+
+  script.
+
+    function showAdditionalData(itemId) {
+      window.location.href = `/details?id=${itemId}`;
+    }
+
+    // JavaScript code for filtering books based on search input
+    document.getElementById('searchForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent form submission
+      var searchInput = document.getElementById('searchInput').value.toLowerCase();
+      var books = document.querySelectorAll('.book');
+      books.forEach(function (book) {
+        var title = book.querySelector('p').textContent.toLowerCase();
+        // Hide or show book based on search input
+        if (title.includes(searchInput)) {
+          book.style.display = 'block';
+        } else {
+          book.style.display = 'none';
+        }
+      });
+    });
