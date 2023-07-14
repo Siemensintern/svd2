@@ -1,18 +1,17 @@
+
 doctype html
 head
   title Home
   title Mobility Components Installation Guide
-  h1 Welcome to Siemens Mobility Industries
-  h2 Siemens Vendor Directory
+ 
   style.
     /* CSS styling for the bookshelf */
     body {
-    background-image: url("../static/back.png");
+    background-image: url("../public/back.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     }
-
     h1 {
     color: white;
     font-family: 'Times New Roman', Times, serif, sans-serif;
@@ -177,9 +176,35 @@ head
     {
       color :blue;
     }
+    ul 
+    {
+      margin:0px;
+      padding:20px 200px;
+      display:flex;
+      flex-direction:row;
+      background-color:rgba(0,0,0,0.5);
+    }
+    li 
+    {
+      margin-left:30px;
+      list-style:none;
+    }
+    li a
+    {
+      text-decoration:none;
+      color: white;
+      font-weight:bold;
+    }
+header  
+  div#navbar 
+         ul 
+           div.ada
+           li #[a(href="/home") Home]
+           li #[a(href="/about") About Us]
 a.logo(href='/home')
-  img(src='../static/Siemens-logo (1).png' alt='Logo')
-
+  img(src='../public/lg.png' alt='Logo')
+h1 Welcome to Siemens Mobility Industries
+h2 Siemens Vendor Directory
 .search
   form#searchForm
     input#searchInput(type='text' placeholder='Search Categories...')

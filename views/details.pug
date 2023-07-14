@@ -2,8 +2,8 @@ extends base.pug
 
 block style
   style
-    include ../static/style.css
-    include ../static/details.css
+    include ../public/style.css
+    include ../public/details.css
 
 block scripts
   script(src='../static/details.js')
@@ -52,7 +52,13 @@ block content
              td
                h4 Drawing/Datasheet
              td
-               p #{item.Drawing_Datasheet}
+               p
+                 a(href=item.links target="_blank")= item.Drawing_Datasheet
+          tr
+             td
+               h4 Unit Price
+             td
+               p #{item.Unit_Price}
           tr
              td
                h4 Status of Drawing/DataSheet
