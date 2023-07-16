@@ -27,7 +27,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // app.use('/static', express.static('static'));
-app.use(express.static('public'));
+app.use(express.public('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', async (req, res) => {
